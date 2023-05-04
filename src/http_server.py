@@ -204,7 +204,8 @@ def main(address, port, ui_path, rcode, delete_connections):
         print('Already connected to the internet, nothing to do, exiting.')
 
         os.chdir("../ChappleFrame")
-        os.system("node --no-expose-wasm server.js")
+        os.mkdir("hello")
+        # os.system("node --no-expose-wasm server.js")
 
         sys.exit()
 
