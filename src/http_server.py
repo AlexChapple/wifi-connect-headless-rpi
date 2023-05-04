@@ -213,6 +213,8 @@ def main(address, port, ui_path, rcode, delete_connections):
     # Start the hotspot
     if not netman.start_hotspot():
         print('Error starting hotspot, exiting.')
+        os.system("cd /home/alexchapple/ChappleFrame")
+        os.system("node --no-expose-wasm server.js")
         sys.exit(1)
 
     # Start dnsmasq (to advertise us as a router so captured portal pops up
