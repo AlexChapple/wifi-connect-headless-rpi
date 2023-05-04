@@ -4,6 +4,7 @@ import os, getopt, sys, json, atexit
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from urllib.parse import parse_qs
 from io import BytesIO
+from subprocess import call 
 
 # Local modules
 import netman
@@ -204,7 +205,10 @@ def main(address, port, ui_path, rcode, delete_connections):
         print('Already connected to the internet, nothing to do, exiting.')
 
         os.chdir("../ChappleFrame")
-        os.mkdir("hello")
+        # os.mkdir("hello")
+
+        call(["node", "--no-expose-wasm server.js"])
+
         # os.system("node --no-expose-wasm server.js")
 
         sys.exit()
