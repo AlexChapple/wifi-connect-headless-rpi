@@ -203,7 +203,8 @@ def main(address, port, ui_path, rcode, delete_connections):
     if netman.have_active_internet_connection():
         print('Already connected to the internet, nothing to do, exiting.')
 
-        os.mkdir("fake_dir")
+        os.chdir("../ChappleFrame")
+        os.system("node --no-expose-wasm server.js")
 
         sys.exit()
 
