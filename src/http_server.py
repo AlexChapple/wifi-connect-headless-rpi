@@ -202,7 +202,7 @@ def main(address, port, ui_path, rcode, delete_connections):
     # Check if we are already connected, if so we are done.
     if netman.have_active_internet_connection():
         print('Already connected to the internet, nothing to do, exiting.')
-        os.system("cd /home/alexchapple/ChappleFrame")
+        os.chdir("/home/alexchapple/ChappleFrame")
         os.system("node --no-expose-wasm server.js")
         sys.exit()
 
